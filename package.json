@@ -1,6 +1,13 @@
 {
   "scripts": {
-    "dev": "nodemon ./src/main.ts"
+    "dev": "nodemon ./src/main.ts",
+    "prepare": "husky install",
+		"test": "echo testing"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "nodemonConfig": {
     "watch": [
