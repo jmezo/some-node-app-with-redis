@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "express-validator": "^6.10.1",
     "redis": "^3.1.2",
     "winston": "^3.3.3"
   }
