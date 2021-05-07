@@ -67,7 +67,7 @@ Keys are binary safe strings. The max siye is 512MB. An empty string is also val
 (you can use binary objects like files as keys)
 ### best practices for using keys:
 * Don't use very long keys (e.g. 1024 bytes), as it will slow down lookup time (you can use hashing instead).
-* Try to stick with a schema. For instance "object-type:id" is a good idea, as in "user:1000". Dots or dashes are often used for multi-word fields, as in "comment:1234:reply.to" or "comment:1234:reply-to".
+* Try to stick with a schema. For instance "object-type:id" is a good idea, as in "user:1000". Dots or dashes are often used for multi-word fields, as in "comment:345234:reply.to" or "comment:345234:reply-to".
 * You don't have to use very short keys, it's better if it's more readable.
 Instead of "u1000flw" use "user:1000:followers".
 
