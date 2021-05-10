@@ -29,42 +29,42 @@ use cases:
 ## data types
 
 ### string: 
-2^32 bits 512 MB / key
-plain strings, json objects, raw bits, binary files
-commands: GET, SET, INCR, GETSET, MGET, MSET
+2^32 bits 512 MB / key  
+plain strings, json objects, raw bits, binary files  
+commands: GET, SET, INCR, GETSET, MGET, MSET  
 
 ### list:
-2^32 elements / key
-It's a linked list (fast near both ends, slow in the middle).
-commands: (L/R) LPUSH, RPUSH, LPOP, RPOP, LRANGE (NO RRANGE), LTRIM, BRPOP, BLPOP
+2^32 elements / key  
+It's a linked list (fast near both ends, slow in the middle).  
+commands: (L/R) LPUSH, RPUSH, LPOP, RPOP, LRANGE (NO RRANGE), LTRIM, BRPOP, BLPOP  
 
 ### hash:
-2 ^ 32 key-value / key
-It can work like a table. +1 level of nesting is allowed.
-commands: HSET, HGET, HMSET, HMGET, HGETALL, HINCRBY
+2 ^ 32 key-value / key  
+It can work like a table. +1 level of nesting is allowed.  
+commands: HSET, HGET, HMSET, HMGET, HGETALL, HINCRBY  
 
 ### set:
-2^32 elements / key
+2^32 elements / key  
 A set of unordered unique items.
 You can compare two sets: SUNIONSTORE, SDIFFSTORE, SINTERSTORE
 
 ### sorted set:
-Same as set but you can sort it by a value.
-Sorting happens on insert.
+Same as set but you can sort it by a value.  
+Sorting happens on insert.  
 
 ### bitmap:
-It has special commands to handle string values as bit arrays.
-Can be used for operating on images in memory.
+It has special commands to handle string values as bit arrays.  
+Can be used for operating on images in memory.  
 
 ### hyperloglog:
-Probabilistic data structure for estimating number of items in set.
+Probabilistic data structure for estimating number of items in set.  
 
 ### Stream:
-Append olny collection of map-like entries.
+Append olny collection of map-like entries.  
 
 ## redis keys
-Keys are binary safe strings. The max siye is 512MB. An empty string is also valid for a key.
-(you can use binary objects like files as keys)
+Keys are binary safe strings. The max size is 512MB. An empty string is also valid for a key.
+(you can use binary objects like files as keys)  
 ### best practices for using keys:
 * Don't use very long keys (e.g. 1024 bytes), as it will slow down lookup time (you can use hashing instead).
 * Try to stick with a schema. For instance "object-type:id" is a good idea, as in "user:1000". Dots or dashes are often used for multi-word fields, as in "comment:345234:reply.to" or "comment:345234:reply-to".
